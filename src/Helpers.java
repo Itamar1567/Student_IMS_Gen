@@ -10,6 +10,7 @@ public class Helpers {
             System.out.println("ID: " + s.getId());
             System.out.println("Name: " + s.getName());
             System.out.println("DOB: " + s.getDOB());
+            System.out.println("Type: " + s.getType());
             System.out.println("Courses: ");
             s.viewEnrolledCourses();
             System.out.println("----------------------------------");
