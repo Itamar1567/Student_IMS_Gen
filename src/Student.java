@@ -3,16 +3,27 @@ import java.util.List;
 
 public class Student extends Person {
 
+    private float grade;
+
 	private HashMap<Integer, Course> courses = new HashMap<>();
 
 	public Student(int id, String name, String DOB) {
 		super(id, name, DOB, "Student");
+        grade = 0;
 	}
 
 	@Override
 	public void setType(String type) {
 		type = type.toUpperCase();
 	}
+
+    public void setGrade(float newGrade){
+        this.grade = newGrade;
+    }
+
+    public float getGrade() {
+        return grade;
+    }
 
 	//Prints all student courses
 	public void viewEnrolledCourses() {

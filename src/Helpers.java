@@ -3,6 +3,16 @@ import java.util.Scanner;
 
 public class Helpers {
 
+    //Gets the average score for all students
+    public static float GetAllStudentsAverageScore(HashMap<Integer, Student> students) {
+        float average = 0;
+        for (Student student : students.values()) {
+            average += student.getGrade();
+        }
+        average /= students.size();
+        return average;
+    }
+
 	//Iterates over all teachers and their values and displays them on screen
 	public static void showALlTeachers(HashMap<Integer, Teacher> teachers) {
 		for (Teacher t : teachers.values()) {
@@ -24,6 +34,7 @@ public class Helpers {
 			System.out.println("Name: " + s.getName());
 			System.out.println("DOB: " + s.getDOB());
 			System.out.println("Type: " + s.getType());
+            System.out.println("Grade: " + s.getGrade());
 			System.out.println("Courses: ");
 			s.viewEnrolledCourses();
 			System.out.println("----------------------------------");
@@ -256,8 +267,10 @@ public class Helpers {
 
 		String studentName = IO.promptUserForStringInput("Please enter student name: ", scanner);
 		String DateOfBirth = IO.promptUserForStringInput("Date of Birth (mm/dd/yyyy): ", scanner);
+        float grade = IO.promptUserForNumericalInput("Grade: ", scanner);
 
 		Student student = new Student(id, studentName, DateOfBirth);
+        student.setGrade(grade);
 
 		students.put(id, student);
 
