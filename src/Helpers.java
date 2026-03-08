@@ -3,14 +3,19 @@ import java.util.Scanner;
 
 public class Helpers {
 
+    public static float GetAllStudentsGradesSum(HashMap<Integer, Student> students){
+        float sum = 0;
+        for(Student student: students.values()){
+            sum += student.getGrade();
+        }
+        return sum;
+    }
+
     //Gets the average score for all students
     public static float GetAllStudentsAverageScore(HashMap<Integer, Student> students) {
-        float average = 0;
-        for (Student student : students.values()) {
-            average += student.getGrade();
-        }
-        average /= students.size();
-        return average;
+        float sum = GetAllStudentsGradesSum(students);
+        sum /= students.size();
+        return sum;
     }
 
 	//Iterates over all teachers and their values and displays them on screen
