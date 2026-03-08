@@ -3,6 +3,19 @@ import java.util.Scanner;
 
 public class Helpers {
 
+    //Iterates over all teachers and their values and displays them on screen
+    public static void showALlTeachers(HashMap<Integer, Teacher> teachers){
+        for(Teacher t : teachers.values()){
+            System.out.println("----------------------------------");
+            System.out.println("ID: " + t.getId());
+            System.out.println("Name: " + t.getName());
+            System.out.println("DOB: " + t.getDOB());
+            System.out.println("Type: " + t.getType());
+            System.out.println("Subject: " + t.getSubject());
+            System.out.println("----------------------------------");
+        }
+    }
+
     //Iterates over all students and their values and displays them on screen
     public static void showALlStudents(HashMap<Integer, Student> students){
         for(Student s : students.values()){
@@ -224,7 +237,7 @@ public class Helpers {
     //Creates a student and adds them to the students list
     public static void createStudentHelper(Scanner scanner, HashMap<Integer, Student> students) {
 
-        System.out.println("Create a Student and add to them to the list");
+        System.out.println("Create a Student and add them to the list");
         int id = IO.promptUserForNumericalInput("Please enter a unique student id: ", scanner);
         while(students.containsKey(id)){
             System.out.println("Student with id" + id + " already exists");
@@ -239,6 +252,29 @@ public class Helpers {
         students.put(id, student);
 
         System.out.println("Student with id " + id + " has been created");
+
+    }
+
+    //Creates a teacher and adds them to the teacher list
+    public static void createTeacherHelper(Scanner scanner, HashMap<Integer, Teacher> teachers) {
+
+        System.out.println("Create a teacher and add them to the list");
+        int id = IO.promptUserForNumericalInput("Please enter a unique teacher id: ", scanner);
+        while(teachers.containsKey(id)){
+            System.out.println("Teacher with id" + id + " already exists");
+            id = IO.promptUserForNumericalInput("Enter id: ", scanner);
+        }
+
+        String teacherName = IO.promptUserForStringInput("Please enter teacher name: ", scanner);
+        String DateOfBirth = IO.promptUserForStringInput("Date of Birth (mm/dd/yyyy): ", scanner);
+        String subject = IO.promptUserForStringInput("Enter teaching Subject: ", scanner);
+
+        Teacher teacher = new Teacher(id, teacherName, DateOfBirth);
+        teacher.setSubject(subject);
+
+        teachers.put(id, teacher);
+
+        System.out.println("Teacher with id " + id + " has been created");
 
     }
 }
