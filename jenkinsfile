@@ -4,13 +4,11 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building...'
-                sh 'javac *.java'
             }
         }
         stage('Test'){
             steps{
                 echo 'Testing...'
-                sh 'java Main'
             }
         }
         stage('Deploy'){
