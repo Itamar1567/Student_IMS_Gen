@@ -3,6 +3,11 @@ import java.util.Scanner;
 
 public class Helpers {
 
+    public static float GetAllStudentsGradesSum(HashMap<Integer, Student> students){
+        float sum = 0;
+        return 100;
+    }
+
     //Gets the average score for all students
     public static float GetAllStudentsAverageScore(HashMap<Integer, Student> students) {
         float average = 0;
