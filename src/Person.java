@@ -1,47 +1,46 @@
 public abstract class Person {
-    private int id;
-    private String name;
-    private String DOB;
-    private String type;
 
-    public Person(int id, String name, String DOB, String type) {
-        this.id = id;
-        this.name = name;
-        this.DOB = DOB;
-        this.type = type;
-    }
+	private int id;
+	private String name;
+	private String DOB;
+	private String type;
 
-    public abstract void setType(String type);
+	public Person(int id, String name, String DOB, String type) {
+		this.id = id;
+		this.name = name;
+		this.DOB = DOB;
+		this.type = type;
+	}
 
-    public String getType(){
-        return type;
-    }
+	public abstract void setType(String type);
 
-    public int getId() {
-        return id;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-        System.out.println("Name updated");
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getDOB() {
-        return DOB;
-    }
+	public void setName(String name) {
+		this.name = name;
+		System.out.println("Name updated");
+	}
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
-        System.out.println("DOB updated");
-    }
+	public String getDOB() {
+		return DOB;
+	}
 
-
+	public void setDOB(String DOB) {
+		this.DOB = DOB;
+		System.out.println("DOB updated");
+	}
 }
