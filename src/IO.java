@@ -24,6 +24,12 @@ public class IO {
         System.out.println("2. Finish");
     }
 
+    public static void PrintTeacherOptions(){
+        System.out.println("1. Add a teacher");
+        System.out.println("2. Show all teachers");
+        System.out.println("3. Exit");
+    }
+
     public static void PrintStudentOptions(){
         System.out.println("1. Add a new student");
         System.out.println("2. Delete a student by id");
@@ -44,6 +50,7 @@ public class IO {
         System.out.println("Welcome to the Student IMS");
         System.out.println("What would you like to do today?");
         System.out.println("Choose an option by entering a number \n");
+        System.out.println("0. Teacher Options");
         System.out.println("1. Course Options");
         System.out.println("2. Student Options\n");
         System.out.println("3. Enroll student in a course");

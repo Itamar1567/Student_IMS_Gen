@@ -11,6 +11,7 @@ public class Main {
 
         HashMap<Integer, Course> courses = new HashMap<>();
         HashMap<Integer, Student> students = new HashMap<>();
+        HashMap<Integer, Teacher> teachers = new HashMap<>();
 
         while(true){
 
@@ -24,6 +25,17 @@ public class Main {
             IO.PrintStartOptions();
             int choice = IO.promptUserForNumericalInput("Enter: ", scanner);
             switch (choice) {
+                case 0:
+                    IO.PrintTeacherOptions();
+                    switch (IO.promptUserForNumericalInput("Enter: ", scanner)) {
+                        case 1:
+                            Helpers.createTeacherHelper(scanner, teachers);
+                            break;
+                        case 2:
+                            Helpers.showALlTeachers(teachers);
+                            break;
+                    }
+                    break;
                 case 1:
                     IO.PrintCourseOptions();
                     switch (IO.promptUserForNumericalInput("Enter: ", scanner)) {
