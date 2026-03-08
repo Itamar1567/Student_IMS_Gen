@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+    stages{
+        stage('Build'){
+            steps{
+                echo 'Building...'
+                sh 'javac *.java'
+            }
+        }
+        stage('Test'){
+            steps{
+                echo 'Testing...'
+                sh 'java Main'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo 'Deploying...'
+            }
+        }
+    }
+    post{
+        success{
+            echo 'Pipline succeeded'
+        }
+        failure{
+            echo 'Pipline failed'
+        }
+    }
+}
