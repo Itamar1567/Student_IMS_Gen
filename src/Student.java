@@ -2,49 +2,44 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Student extends Person {
-    private HashMap<Integer, Course> courses = new HashMap<>();
 
-    public Student(int id, String name, String DOB) {
-        super(id, name, DOB, "Student");
-    }
+	private HashMap<Integer, Course> courses = new HashMap<>();
 
-    @Override
-    public void setType(String type) {
-        type = type.toUpperCase();
-    }
+	public Student(int id, String name, String DOB) {
+		super(id, name, DOB, "Student");
+	}
 
-    //Prints all student courses
-    public void viewEnrolledCourses(){
-        for(Course c: courses.values()){
-            System.out.println("Enrolled in: " + c.getTitle());
-        }
-    }
+	@Override
+	public void setType(String type) {
+		type = type.toUpperCase();
+	}
 
-    //Enrolled a student in a course and returns true if the enrollment worked
-    public boolean enrollInCourse(Course course){
+	//Prints all student courses
+	public void viewEnrolledCourses() {
+		for (Course c : courses.values()) {
+			System.out.println("Enrolled in: " + c.getTitle());
+		}
+	}
 
-        if(courses.containsKey(course.getCourseId())){
-            System.out.println("Already enrolled in " + course.getCourseId());
-            return false;
-        }
+	//Enrolled a student in a course and returns true if the enrollment worked
+	public boolean enrollInCourse(Course course) {
+		if (courses.containsKey(course.getCourseId())) {
+			System.out.println("Already enrolled in " + course.getCourseId());
+			return false;
+		}
 
-        courses.put(course.getCourseId(), course);
-        System.out.println("Enrolled in " + course.getCourseId());
-        return true;
+		courses.put(course.getCourseId(), course);
+		System.out.println("Enrolled in " + course.getCourseId());
+		return true;
+	}
 
-    }
-
-
-    //Removes a course from a student's list and returns true if the removal was successfull
-    public boolean deleteCourseById(Integer id){
-        if(courses.containsKey(id)){
-            courses.remove(id);
-            System.out.println("Course with id: " + id + " has been deleted");
-            return true;
-        }
-        return false;
-    }
-
-
-
+	//Removes a course from a student's list and returns true if the removal was successfull
+	public boolean deleteCourseById(Integer id) {
+		if (courses.containsKey(id)) {
+			courses.remove(id);
+			System.out.println("Course with id: " + id + " has been deleted");
+			return true;
+		}
+		return false;
+	}
 }
