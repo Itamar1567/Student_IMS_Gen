@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building project...'
-                bat 'javac src/Main.java'
+                bat 'javac src/*.java'
             }
         }
 
