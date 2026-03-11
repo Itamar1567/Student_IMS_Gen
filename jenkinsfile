@@ -13,14 +13,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building project...'
-                bat 'javac Main.java'
+                bat 'javac src/Main.java'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running automated tests...'
-                bat 'java Main'
+                bat 'java src/Main'
             }
         }
 
