@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code...'
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building project...'
+                bat 'javac src/*.java'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running automated tests...'
+                bat 'cd src && (echo 7) | java Main'
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded'
+        }
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
