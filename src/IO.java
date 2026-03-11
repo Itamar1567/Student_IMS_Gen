@@ -71,7 +71,7 @@ public class IO {
 	//Validates if a value is numeric does not allow the user to continue before choosing a number
 	public static int promptUserForNumericalInput(String s, Scanner scanner) {
 		System.out.print(s);
-		String input = scanner.nextLine();
+		String input = scanner.nextLine().trim();
 		while (!isInteger(input)) {
 			System.out.println("Please enter a numeric value: ");
 			input = scanner.nextLine();
